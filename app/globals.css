@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+
+html,
+body {
+  background: #0a0a0a;
+  color: #e8e4db;
+}
+
+body {
+  font-family: "Special Elite", ui-monospace, Courier, monospace;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #e8e4db;
+  color: #0a0a0a;
+}

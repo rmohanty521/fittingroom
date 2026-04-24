@@ -78,7 +78,7 @@ export function WaitlistForm() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="absolute right-0 top-1/2 -translate-y-1/2 text-xs tracking-[0.3em] lowercase text-bone/60 hover:text-bone transition-colors disabled:opacity-60"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 pl-3 bg-void text-xs tracking-[0.3em] lowercase text-bone/60 hover:text-bone transition-colors disabled:opacity-60"
         >
           {status === "submitting" ? "…" : config.hero.cta}
         </button>

@@ -1,5 +1,5 @@
 export const config = {
-  brandName: "fitted",
+  brandName: "archiveaccess",
 
   hero: {
     title: "archive access.",

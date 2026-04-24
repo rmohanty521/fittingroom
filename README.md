@@ -1,4 +1,4 @@
-# FittedWeb
+# archiveaccess
 
 Minimal waitlist landing page + admin panel for a peer-to-peer designer archive clothing rental service. Built for demand validation — no payments, no inventory, just email capture with a discount code emailed back.
 
@@ -43,7 +43,7 @@ Add more admins the same way. There is no self-serve registration.
 1. [resend.com](https://resend.com) → create an account.
 2. Add and verify a sending domain (or use the Resend-provided onboarding domain while testing).
 3. **API Keys** → create one → `RESEND_API_KEY`.
-4. Set `RESEND_FROM_EMAIL` to a verified address, e.g. `Fitted <hello@yourdomain.com>`.
+4. Set `RESEND_FROM_EMAIL` to a verified address, e.g. `archiveaccess <hello@yourdomain.com>`.
 
 ### 5. Environment variables
 

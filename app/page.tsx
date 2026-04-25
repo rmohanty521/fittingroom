@@ -1,11 +1,38 @@
+import Link from "next/link";
 import { config } from "@/config";
 import { WaitlistForm } from "@/components/waitlist-form";
 import { Aura, GrainOverlay, Vignette } from "@/components/graphics";
+import { DevCodeGate } from "@/components/dev-code-gate";
+import { isPreviewUnlocked } from "@/lib/preview-gate";
 
-export default function HomePage() {
+export default function HomePage({
+  searchParams,
+}: {
+  searchParams?: { dev?: string };
+}) {
+  const unlocked = isPreviewUnlocked();
+  const denied = searchParams?.dev === "denied";
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-void text-bone">
       <Aura />
+
+      {unlocked && (
+        <div className="fixed bottom-4 right-4 z-50 flex items-center gap-2">
+          <Link
+            href="/shop"
+            className="border border-bone/20 bg-void/60 px-4 py-2 text-[10px] tracking-[0.3em] lowercase text-bone/60 backdrop-blur hover:border-bone/50 hover:text-bone transition"
+          >
+            view as customer →
+          </Link>
+          <Link
+            href="/seller"
+            className="border border-bone/20 bg-void/60 px-4 py-2 text-[10px] tracking-[0.3em] lowercase text-bone/60 backdrop-blur hover:border-bone/50 hover:text-bone transition"
+          >
+            view as seller →
+          </Link>
+        </div>
+      )}
 
       <div className="relative z-10 flex min-h-screen flex-col">
         <header className="flex items-center justify-between px-6 sm:px-10 py-6">
@@ -36,7 +63,7 @@ export default function HomePage() {
 
         <footer className="px-6 sm:px-10 py-6 flex items-center justify-between text-xs tracking-[0.3em] lowercase text-bone/30">
           <span>mmxxvi</span>
-          <span>—</span>
+          <DevCodeGate denied={denied} />
         </footer>
       </div>
 
